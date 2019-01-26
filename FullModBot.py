@@ -14,7 +14,7 @@ global chat_filter
 global bypass_list
 chat_filter = ["FUCK", "DICK", "SHIT", "FUCKING", "BITCH"]
 bypass_list = []
-client = commands.Bot(command_prefix='?!')
+client = commands.Bot(command_prefix='f!')
 Client = discord.Client()
 
 @client.event
@@ -38,7 +38,7 @@ async def ping(ctx):
 
 @client.command(pass_context=True)
 async def purge(ctx, amount=301):
-    '''Usage: ?!purge [amount]'''
+    '''Usage: f!purge [amount]'''
     if ctx.message.author.server_permissions.administrator or ctx.message.author.id == '416226732966936577':
         try:
             channel = ctx.message.channel
@@ -55,7 +55,7 @@ async def purge(ctx, amount=301):
 
 @client.command(pass_context=True, no_pm=True)
 async def kick(ctx, user: discord.Member, * ,reason : str = None):
-    '''Usage: ?!kick [member] [reason]'''
+    '''Usage: f!kick [member] [reason]'''
     if not ctx.message.author.bot:
         if ctx.message.author.server_permissions.administrator:
             if reason == "None":
